@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive FAQ Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .faq-answer {
+            display: none;
+            padding-left: 1rem;
+        }
+        @media (max-width: 768px) {
+            .faq-container {
+                flex-direction: column;
+                
+            }
+            .faq-image {
+                order: -1;
+                margin-bottom: 1rem;
+            }
+        }
+        body {
+            background-color: #facc15; /* Yellow background from the image */
+        }
+        .faq-title {
+            color: #1e293b; /* Dark gray for text, matching the image */
+        }
+        .faq-question {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+        .faq-question span {
+            color: #3b82f6; /* Blue arrow color */
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
+        <!-- FAQ Image -->
+        <div class="faq-image w-full max-w-md lg:mr-8">
+            <img src="img/about/ho-removebg-preview.png" alt="Student with Books" class="w-full rounded-lg shadow-md">
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-container w-full lg:w-2/3" >
+            <h1 class="text-3xl font-bold faq-title text-center mb-6">Frequently Asked Questions</h1>
+            <div class="space-y-4">
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        What are the course categories available at SLA?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>The course categories include IT, Management, and Soft Skills, tailored to various career paths.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        What is the learning methodology at SLA?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>SLA uses a blend of classroom training, online sessions, and hands-on projects for effective learning.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        How can I choose the right career option?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>Our career counselors assess your skills and interests to guide you toward the best career path.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        What are the modes available at SLA for paying course fees?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>You can pay via online banking, credit/debit cards, or installment plans.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        What are the major aspects of SLA?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>Key aspects include expert trainers, industry-aligned courses, and placement assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        Who are the contact persons to know more about Courses at SLA?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>Contact our support team at info@sla.com or call 123-456-7890 for more details.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="text-lg font-semibold cursor-pointer faq-question flex justify-between items-center border-b pb-2">
+                        How does SLA differ from any other IT Training Institute in Chennai?
+                        <span class="text-blue-600">›</span>
+                    </h2>
+                    <div class="faq-answer mt-2 text-gray-600">
+                        <p>SLA stands out with personalized training, updated curricula, and strong industry connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for FAQ Toggle -->
+    <script>
+        document.querySelectorAll('.faq-item h2').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

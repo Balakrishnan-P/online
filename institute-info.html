@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Institute Enquiry</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --base-font-size: 16px;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: transparent;
+    }
+
+    .text-yellow {
+      color: #ffc107;
+    }
+
+    .quick-enquiry-form {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 0.5rem; /* 8px */
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(0.625rem); /* 10px */
+      border: 0.06rem solid rgba(255, 255, 255, 0.2); /* 1px */
+      padding: 2rem; /* 32px */
+    }
+
+    .quick-enquiry-form:hover {
+      transform: translateY(-0.625rem); /* -10px */
+      box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2); /* 10px 20px */
+    }
+
+    .form-control, .form-select {
+      border-radius: 0.625rem; /* 10px */
+      background: rgba(255, 255, 255, 0.9);
+      border: 0.0625rem solid rgba(0, 0, 0, 0.1); /* 1px */
+      transition: all 0.3s ease;
+      font-size: 1rem; /* 16px */
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: #ffc107;
+      box-shadow: 0 0 0.625rem rgba(255, 193, 7, 0.3); /* 10px */
+      background: #fff;
+    }
+
+    .btn-dark {
+      background: linear-gradient(45deg, #343a40, #495057);
+      border: none;
+      border-radius: 0.625rem; /* 10px */
+      transition: all 0.3s ease;
+      font-size: 1rem; /* 16px */
+      padding: 0.75rem; /* 12px */
+    }
+
+    .btn-dark:hover {
+      background: linear-gradient(45deg, #495057, #343a40);
+      transform: scale(1.05);
+    }
+
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(3.125rem); /* 50px */
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-card {
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    @keyframes pulseGradient {
+      0%, 100% {
+        background: repeating-linear-gradient(180deg, lightgreen, rgb(232, 234, 235) 0.625rem, transparent 0.625rem, transparent 1.25rem); /* 10px 20px */
+        opacity: 1;
+      }
+      50% {
+        background: repeating-linear-gradient(180deg, yellow, lightgreen 0.625rem, transparent 0.625rem, transparent 1.25rem); /* 10px 20px */
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes scaleLine {
+      0%, 100% {
+        transform: scaleY(1);
+      }
+      50% {
+        transform: scaleY(1.02);
+      }
+    }
+
+    .institute-info-quick-enquiry {
+      padding: 2rem 0; /* 32px */
+    }
+
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0.25rem; /* 4px */
+      height: 100%;
+      background: repeating-linear-gradient(180deg, #999, #999 0.625rem, transparent 0.625rem, transparent 1.25rem); /* 10px 20px */
+      animation: pulseGradient 2s ease-in-out infinite, scaleLine 1.5s ease-in-out infinite;
+    }
+
+    /* Media Queries */
+    @media (min-width: 62rem) and (max-width: 75rem) { /* 992px to 1200px */
+      .quick-enquiry-form {
+        padding: 1.5rem; /* 24px */
+      }
+
+      .quick-enquiry-form h4 {
+        font-size: 1.375rem; /* 22px */
+      }
+
+      .form-control, .form-select {
+        font-size: 0.9375rem; /* 15px */
+      }
+
+      .btn-dark {
+        font-size: 0.9375rem; /* 15px */
+        padding: 0.625rem; /* 10px */
+      }
+
+      .institute-info-quick-enquiry p {
+        font-size: 0.9375rem; /* 15px */
+      }
+
+      #qeCountryCode {
+        max-width: 6rem; /* 96px */
+      }
+    }
+
+    @media (min-width: 48rem) and (max-width: 61.9375rem) { /* 768px to 991px */
+      .quick-enquiry-form {
+        padding: 1.25rem; /* 20px */
+      }
+
+      .quick-enquiry-form h4 {
+        font-size: 1.25rem; /* 20px */
+      }
+
+      .form-control, .form-select {
+        font-size: 0.875rem; /* 14px */
+      }
+
+      .btn-dark {
+        font-size: 0.875rem; /* 14px */
+        padding: 0.5rem; /* 8px */
+      }
+
+      .institute-info-quick-enquiry p {
+        font-size: 0.875rem; /* 14px */
+      }
+
+      .vertical-line {
+        width: 0.1875rem; /* 3px */
+      }
+
+      #qeCountryCode {
+        max-width: 5.625rem; /* 90px */
+      }
+
+      .mb-3.d-flex.gap-2 {
+        flex-direction: row;
+      }
+    }
+
+    @media (max-width: 47.9375rem) { /* 767px */
+      .quick-enquiry-form {
+        padding: 1rem; /* 16px */
+        margin: 0.625rem; /* 10px */
+      }
+
+      .quick-enquiry-form h4 {
+        font-size: 1.125rem; /* 18px */
+      }
+
+      .form-control, .form-select {
+        font-size: 0.8125rem; /* 13px */
+      }
+
+      .btn-dark {
+        font-size: 0.8125rem; /* 13px */
+        padding: 0.4375rem; /* 7px */
+      }
+
+      .institute-info-quick-enquiry .col-md-6 {
+        text-align: center;
+      }
+
+      .institute-info-quick-enquiry p {
+        font-size: 0.8125rem; /* 13px */
+      }
+
+      #qeCountryCode {
+        max-width: 5rem; /* 80px */
+      }
+
+      .mb-3.d-flex.gap-2 {
+        flex-direction: column;
+      }
+
+      .mb-3.d-flex.gap-2 select {
+        width: 100%;
+      }
+
+      .institute-info-quick-enquiry {
+        padding-bottom: 2rem; /* 32px */
+      }
+
+      .vertical-line {
+        display: none;
+      }
+    }
+
+    @media (max-width: 36rem) { /* 576px */
+      .quick-enquiry-form {
+        padding: 0.75rem; /* 12px */
+      }
+
+      .quick-enquiry-form h4 {
+        font-size: 1rem; /* 16px */
+      }
+
+      .form-control, .form-select {
+        font-size: 0.75rem; /* 12px */
+      }
+
+      .btn-dark {
+        font-size: 0.75rem; /* 12px */
+        padding: 0.375rem; /* 6px */
+      }
+
+      .institute-info-quick-enquiry h6 {
+        font-size: 0.8125rem; /* 13px */
+      }
+
+      .institute-info-quick-enquiry h5 {
+        font-size: 0.9375rem; /* 15px */
+      }
+
+      .institute-info-quick-enquiry p {
+        font-size: 0.75rem; /* 12px */
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="institute-info-quick-enquiry py-4 bg-transparent">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <!-- Quick Enquiry Form -->
+        <div class="col-md-6">
+          <div class="quick-enquiry-form p-1 ">
+            <h4 class="mb-4 text-dark fw-bold">Quick Enquiry</h4>
+            <form id="quickEnquiryForm" novalidate>
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg shadow-sm" id="qeName" placeholder="Your Name *" required />
+                <div class="invalid-feedback">Your name is required</div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg shadow-sm" id="qeEmail" placeholder="Your Email Address *" required />
+                <div class="invalid-feedback">Valid email is required</div>
+              </div>
+              <div class="mb-3 d-flex gap-2">                
+                <input type="tel" class="form-control form-control-lg shadow-sm" id="qeMobile" placeholder="Mobile Number *" required />
+                <div class="invalid-feedback">Mobile number is required</div>
+              </div>
+              <div class="mb-3">
+                <select class="form-select form-select-lg shadow-sm" id="qeCourseInterest" required>
+                  <option value="" disabled selected>Course you are interested in? *</option>
+                  <option value="web">Web Development</option>
+                  <option value="data">Data Science</option>
+                  <option value="ai">Artificial Intelligence</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a course</div>
+              </div>
+              <div class="mb-3 d-flex gap-2">
+                <select class="form-select form-select-lg shadow-sm" id="qeLocation" required>
+                  <option value="" disabled selected>Convenient location for you? *</option>
+                  <option value="city1">City 1</option>
+                  <option value="city2">City 2</option>
+                  <option value="city3">City 3</option>
+                </select>
+                <select class="form-select form-select-lg shadow-sm" id="qeTimeslot" required>
+                  <option value="" disabled selected>Preferred timeslot to call *</option>
+                  <option value="morning">Morning</option>
+                  <option value="afternoon">Afternoon</option>
+                  <option value="evening">Evening</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-dark w-100 btn-lg shadow-sm hover-scale">Let's get Started! <span>✍️</span></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Text Content with Typing Effect -->
+        <div class="col-md-6 border-3 border-secondary ps-3 position-relative">
+          <h6 class="text-muted" id="typingText1">YOU HAVE JUST REACHED</h6>
+          <h5 class="fw-bold mb-3" id="typingText2"></h5>
+          <p>
+            DLK is the <strong>Best Software Training Institute in Chennai</strong> for its Prominent IT Training and Placement Institute steered by IT experts with 100% placement guidance. With over 20 years of experience in Training and Placement, our institute is acclaimed for its practical approach, enabling students to master 70+ technologies effortlessly.
+          </p>
+          <p>
+            Our training is led by IT working professionals from prestigious MNCs, offering an authentic corporate experience. We are dedicated to nurturing skilled professionals to thrive in the ever-evolving IT field with our 500+ hiring partners.
+          </p>
+          <div class="vertical-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Typing Effect -->
+  <script>
+    const element = document.getElementById("typingText2");
+    const fullText = "The Best Software Training Institute in Chennai";
+    const highlightStart = 9;
+    const highlightEnd = 27;
+    let i = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentText = fullText.substring(0, i);
+      const before = currentText.substring(0, highlightStart);
+      const highlight = currentText.substring(highlightStart, highlightEnd);
+      const after = currentText.substring(highlightEnd);
+
+      element.innerHTML = `${before}<span class="text-yellow">${highlight}</span>${after}`;
+
+      if (!isDeleting && i < fullText.length) {
+        i++;
+        setTimeout(typeEffect, 100);
+      } else if (!isDeleting && i === fullText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1500);
+      } else if (isDeleting && i > 0) {
+        i--;
+        setTimeout(typeEffect, 50);
+      } else {
+        isDeleting = false;
+        setTimeout(typeEffect, 500);
+      }
+    }
+
+    typeEffect();
+  </script>
+
+  <!-- Bootstrap JS for form validation -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Form validation
+    (function () {
+      'use strict';
+      const form = document.getElementById('quickEnquiryForm');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>

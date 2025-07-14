@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLA Institute Information</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --base-font-size: 16px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .institute-info-quick-enquiry {
+      padding: 2rem 0; /* 32px */
+      background-color:transparent;
+    }
+
+    .vertical-line {
+      width: 0.25rem; /* 4px */
+      background: repeating-linear-gradient(180deg, #fbc02d, #fbc02d 0.625rem, transparent 0.625rem, transparent 1.25rem); /* 10px 20px */
+      animation: slideDash 1.5s linear infinite, glow 2s ease-in-out infinite, oscillateWidth 1.2s ease-in-out infinite;
+    }
+
+    @keyframes slideDash {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 -1.25rem; } /* -20px */
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 0.125rem lightgreen; opacity: 1; } /* 2px */
+      50% { box-shadow: 0 0 0.3125rem rgba(251, 192, 45, 0.8); opacity: 0.85; } /* 5px */
+    }
+
+    @keyframes oscillateWidth {
+      0%, 100% { width: 0.25rem; } /* 4px */
+      50% { width: 0.3125rem; } /* 5px */
+    }
+
+    h5 {
+      font-size: 1.375rem; /* 22px */
+      font-weight: bold;
+      color: #6c757d;
+      margin-bottom: 1rem; /* 16px */
+    }
+
+    p, li {
+      font-size: 1rem; /* 16px */
+      line-height: 1.5;
+    }
+
+    /* Media Queries */
+    @media (max-width: 47.9375rem) { /* 767.98px */
+      .institute-info-quick-enquiry .row {
+        flex-direction: column;
+      }
+
+      .institute-info-quick-enquiry .col-md-6 {
+        width: 100%;
+        margin-bottom: 1.5rem; /* 24px */
+      }
+
+      .vertical-line {
+        display: none;
+      }
+    }
+
+    @media (min-width: 48rem) and (max-width: 61.9375rem) { /* 768px to 991.98px */
+      .institute-info-quick-enquiry .col-md-6 {
+        padding: 0 0.75rem; /* 12px */
+      }
+
+      .vertical-line {
+        width: 0.1875rem; /* 3px */
+      }
+
+      h5 {
+        font-size: 1.25rem; /* 20px */
+      }
+
+      p, li {
+        font-size: 0.9375rem; /* 15px */
+      }
+    }
+
+    @media (max-width: 36rem) { /* 576px */
+      .institute-info-quick-enquiry {
+        padding: 1.5rem 0; /* 24px */
+      }
+
+      h5 {
+        font-size: 1.125rem; /* 18px */
+      }
+
+      p, li {
+        font-size: 0.875rem; /* 14px */
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="institute-info-quick-enquiry">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-md-6 position-relative">
+          <h5>Why SLA is the Best Software Training Institute in Chennai?</h5>
+          <p>
+            SLA Institute provides an efficient and accessible mode of Software Training in Chennai. Our institute is designed to deliver a comprehensive IT training experience with 100% placement guidance at no cost, helping you kick-start or advance your IT career effortlessly.
+          </p>
+          <p>
+            Our effective curriculum, crafted by expert trainers, offers flexible class timings in both online and offline modes, along with real-time projects to explore the corporate world. Widely recognized IBM Certifications and weekly Codeathons will boost your skills to thrive in the IT industry. Book your free demo today at SLA to experience the facilities of our <strong>Best Software Training Institute in Chennai.</strong>
+          </p>
+          <p><strong>Our top-notch features include:</strong></p>
+          <ul>
+            <li>Training With Projects</li>
+            <li>100% Placement Support</li>
+            <li>No Cost Placement Training</li>
+            <li>Expert Trainers</li>
+            <li>0% Interest EMI Options</li>
+            <li>IBM Certifications Partner</li>
+            <li>Weekly Codeathons</li>
+            <li>Flexible Class Timings</li>
+          </ul>
+          <div class="vertical-line position-absolute top-0 bottom-0 end-0"></div>
+        </div>
+        <div class="col-md-6">
+          <h5>Why IBM Certification and how it will benefit your career?</h5>
+          <p>
+            SLA, the best way to earn globally recognized IBM Certifications, provides complete learning paths in trending technologies. This partnership enables learners to acquire essential skills for reskilling and upskilling, ensuring sustainable career growth.
+          </p>
+          <p><strong>Benefits of IBM Certification:</strong></p>
+          <ul>
+            <li>Globally recognized credentials from IBM, a tech industry leader.</li>
+            <li>Enhance your IT profile with up-to-date technologies.</li>
+            <li>Valued by top MNCs, ensuring better career opportunities and salary hikes.</li>
+            <li>Permanent credential signed by IBM Country Head.</li>
+            <li>Industry-focused course materials, including web content, labs, assignments, and videos.</li>
+            <li>Digital badges issued by IBM for select certifications.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partner Logos Carousel</title>
+  <style>
+    :root {
+      --base-font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .partner-logos-section {
+      padding: 2.5rem 0;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .partner-logos-section h4 {
+      margin-bottom: 1.875rem;
+      font-size: 1.5rem;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .partner-logos-section strong {
+      font-weight: bold;
+    }
+
+    .scrolling-logos {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 90%;
+      position: relative;
+      padding: 0 1rem;
+    }
+
+    .logo-set {
+      display: flex;
+      gap: 2rem;
+      flex-shrink: 0;
+      align-items: center;
+      animation: scroll 30s linear infinite;
+    }
+
+    .logo-set img {
+      max-height: 5rem;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(0%);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .logo-set img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+
+    .scrolling-logos:hover .logo-set {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Laptop View */
+    @media (max-width: 62rem) {
+      .logo-set {
+        gap: 1.5rem;
+      }
+
+      .logo-set img {
+        max-height: 4rem;
+      }
+
+      .partner-logos-section h4 {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Tablet View */
+    @media (max-width: 48rem) {
+      .partner-logos-section {
+        padding: 1.5rem 0;
+      }
+
+      .logo-set {
+        gap: 1rem;
+      }
+
+      .logo-set img {
+        max-height: 3rem;
+      }
+
+      .partner-logos-section h4 {
+        font-size: 1rem;
+      }
+    }
+
+    /* Mobile View */
+    @media (max-width: 36rem) {
+      .partner-logos-section {
+        padding: 1rem 0;
+      }
+
+      .logo-set {
+        gap: 0.75rem;
+      }
+
+      .logo-set img {
+        max-height: 2.5rem;
+      }
+
+      .partner-logos-section h4 {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="partner-logos-section">
+    <div class="container">
+      <h4>We Tie-Up with <strong>1000+</strong> Leading IT and MNC Companies</h4>
+      <div class="scrolling-logos" id="logosContainer">
+        <div class="logo-set">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="img-fluid" />
+          <img src="img/logo-02-variations-primary-421x237@2x.webp" alt="Autodesk" class="img-fluid" />
+          <img src="img/meta-6946620_960_720.webp" alt="Meta" class="img-fluid" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Unity_Technologies_logo.svg" alt="Unity" class="img-fluid" />
+          <img src="img/Overview_Adobe_logo.png" alt="Adobe" class="img-fluid" />
+          <img src="img/cisco.webp" alt="Cisco" class="img-fluid" />
+          <img src="img/05QRxzQoGBeSmrTCt16cJTU-30.webp" alt="Intuit QuickBooks" class="img-fluid" />
+          <img src="img/channels4_profile.jpg" alt="Project Management Institute" class="img-fluid" />
+          <img src="img/cisco.webp" alt="Communication Skills for Business" class="img-fluid" />
+          <img src="img/images (1).png" alt="Entrepreneurship and Small Business" class="img-fluid" />
+          <img src="img/Logos-of-Multinational-Companies-13-1200x750.png" alt="Information Technology Specialist" class="img-fluid" />
+          <img src="img/ic3-exam-voucher.webp" alt="IC3" class="img-fluid" />
+          <img src="img/Tally-732x415.webp" alt="Tally" class="img-fluid" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="img-fluid" />
+        </div>
+        <div class="logo-set">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="img-fluid" />
+          <img src="img/logo-02-variations-primary-421x237@2x.webp" alt="Autodesk" class="img-fluid" />
+          <img src="img/meta-6946620_960_720.webp" alt="Meta" class="img-fluid" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Unity_Technologies_logo.svg" alt="Unity" class="img-fluid" />
+          <img src="img/Overview_Adobe_logo.png" alt="Adobe" class="img-fluid" />
+          <img src="img/cisco.webp" alt="Cisco" class="img-fluid" />
+          <img src="img/05QRxzQoGBeSmrTCt16cJTU-30.webp" alt="Intuit QuickBooks" class="img-fluid" />
+          <img src="img/channels4_profile.jpg" alt="Project Management Institute" class="img-fluid" />
+          <img src="img/cisco.webp" alt="Communication Skills for Business" class="img-fluid" />
+          <img src="img/images (1).png" alt="Entrepreneurship and Small Business" class="img-fluid" />
+          <img src="img/Logos-of-Multinational-Companies-13-1200x750.png" alt="Information Technology Specialist" class="img-fluid" />
+          <img src="img/ic3-exam-voucher.webp" alt="IC3" class="img-fluid" />
+          <img src="img/Tally-732x415.webp" alt="Tally" class="img-fluid" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // No JavaScript needed as animation is handled by CSS
+  </script>
+</body>
+</html>
